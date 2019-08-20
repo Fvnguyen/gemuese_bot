@@ -70,7 +70,8 @@ dispatcher.add_handler(conv_handler)
 
 #Veggy function
 def suggested_veggie(update, context):
-    suggestion = "Warum kochst Du nicht etwas mit " + suggestion()
+    suggestion = suggestion()
+    suggestion += "Warum kochst Du nicht etwas mit "
     context.bot.send_message(chat_id=update.message.chat_id, text=suggestion)
 
 veggie_handler = CommandHandler('empfehlung', suggested_veggie)
