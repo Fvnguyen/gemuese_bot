@@ -84,7 +84,7 @@ veggieList_handler = CommandHandler('liste', veggie_list)
 dispatcher.add_handler(veggieList_handler)
 
 def veggie_lookup(update, context):
-    approval = look_up(strip(context.args))
+    approval = look_up(context.args.strip())
     context.bot.send_message(chat_id=update.message.chat_id, text=approval)
 
 veggieList_handler = CommandHandler('suche', veggie_lookup)
