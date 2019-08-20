@@ -1,0 +1,3 @@
+empfehlung - Empfiehlt ein saisonales Gemüse
+liste - Zeigt alle saisonalen Gemüse diesen Monat
+suche - Prüft ob das genannte Gemüse saisonal ist
