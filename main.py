@@ -83,11 +83,11 @@ def veggie_list(update, context):
 veggieList_handler = CommandHandler('liste', veggie_list)
 dispatcher.add_handler(veggieList_handler)
 
-def veggie_list(update, context):
+def veggie_lookup(update, context):
     approval = look_up(context.args)
-    context.bot.send_message(chat_id=update.message.chat_id, text=seasonal_list)
+    context.bot.send_message(chat_id=update.message.chat_id, text=approval)
 
-veggieList_handler = CommandHandler('suche', veggie_list)
+veggieList_handler = CommandHandler('suche', veggie_lookup)
 dispatcher.add_handler(veggieList_handler)
 
 #Unknown command handler
