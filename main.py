@@ -55,6 +55,6 @@ dispatcher.add_handler(unknown_handler)
 updater.start_webhook(listen="0.0.0.0",
                     port=PORT,
                     url_path=TELEGRAM_TOKEN)
-updater.bot.set_webhook("https://gemuesebot.herokuapp.com/" + TOKEN)
+updater.bot.set_webhook("https://gemuesebot.herokuapp.com/" + TELEGRAM_TOKEN)
 updater.idle()
     
