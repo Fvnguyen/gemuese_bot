@@ -20,7 +20,7 @@ def suggestion():
     return suggestion
 
 def look_up(veggie):
-    approval = veggie.lower() in str(seasonal()).lower()
+    approval = veggie.lower() in [x.lower() for x in seasonal()]
     if approval:
         approval = "Mmmmh, Saisonal...( ͡° ͜ʖ ͡°)"
     else:
