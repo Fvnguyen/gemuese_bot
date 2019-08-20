@@ -12,7 +12,7 @@ TELEGRAM_TOKEN = "957270511:AAH56Vpe-t8-w-R4essJZ5s7h0uLvrV3PEE"
 ROLLDICE = range(1)
 
 PORT = int(os.environ.get('PORT', '8443'))
-updater = Updater(TELEGRAM_TOKEN)
+updater = Updater(TELEGRAM_TOKEN, use_context=True)
 dispatcher = updater.dispatcher
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
