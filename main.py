@@ -70,21 +70,22 @@ dispatcher.add_handler(conv_handler)
 
 #Veggy function
 def suggested_veggie(update, context):
-    context.bot.send_message(chat_id=update.message.chat_id, text="Warum kochst Du nicht etwas mit "+suggestion()).encoding("utf-8")
+    context.bot.send_message(chat_id=update.message.chat_id, text="Warum kochst Du nicht etwas mit "+suggestion())
 
 veggie_handler = CommandHandler('empfehlung', suggested_veggie)
 dispatcher.add_handler(veggie_handler)
 
 def veggie_list(update, context):
-    seasonal_list = str(seasonal())
+    seasonal_list = ', '.join(seasonal()).encode('utf8')
     context.bot.send_message(chat_id=update.message.chat_id, text="Diese Gemüse sind gerade saisonal:")
-    context.bot.send_message(chat_id=update.message.chat_id, text=seasonal_list).encoding("utf-8")
+    context.bot.send_message(chat_id=update.message.chat_id, text=seasonal_list)
 
 veggieList_handler = CommandHandler('liste', veggie_list)
 dispatcher.add_handler(veggieList_handler)
 
 def veggie_lookup(update, context):
-    approval = look_up(str(context.args).strip())
+    test_veg = ''.join(context.args).strip()
+    approval = look_up(test_veg)
     context.bot.send_message(chat_id=update.message.chat_id, text=approval)
 
 veggieList_handler = CommandHandler('suche', veggie_lookup)
