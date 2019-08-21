@@ -9,11 +9,15 @@ import pandas as pd
 from datetime import datetime
 
 # Gemuesefunktionen
-ledger = pd.read_csv("gemuese.csv",encoding = "utf-8", sep = ";")
+ledger = pd.read_csv("gemuese_de.csv",encoding = "utf-8", sep = ";")
 def seasonal():
     current_month = datetime.today().month
     seasonal = ledger.query("Month == "+str(current_month)).query("Seasonal == True")["gemuese"].tolist()
     return seasonal
+
+def in_list():
+    master = ledger["gemuese"].tolist()
+    return master
 
 def suggestion():
     suggestion = random.choice(seasonal())
@@ -21,10 +25,14 @@ def suggestion():
 
 def look_up(veggie):
     approval = veggie.lower() in [x.lower() for x in seasonal()]
+    in_master = veggie.lower() in [x.lower() for x in in_list()]
     if approval:
         approval = "Mmmmh, Saisonal...( ͡° ͜ʖ ͡°)"
     else:
-        approval = "Igitt, importiert ಠ_ಠ"
+        if in_master:
+            approval = "Igitt, importiert ಠ_ಠ"
+        else:
+            approval = "Ich kann das Gemüse in meiner Liste nicht finden. Ist es richtig geschrieben und auch ein heimisches Gemüse? Obst, Exotische Gemüse oder Getreide (wie Kartoffeln) sind in meiner Liste nicht enthalten."
     return approval
 
 # Toke functions
