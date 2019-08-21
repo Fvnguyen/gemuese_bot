@@ -76,7 +76,7 @@ veggie_handler = CommandHandler('empfehlung', suggested_veggie)
 dispatcher.add_handler(veggie_handler)
 
 def veggie_list(update, context):
-    seasonal_list = ', '.join(seasonal()).encode('utf8')
+    seasonal_list = ', '.join(seasonal())
     context.bot.send_message(chat_id=update.message.chat_id, text="Diese Gemüse sind gerade saisonal:")
     context.bot.send_message(chat_id=update.message.chat_id, text=seasonal_list)
 
