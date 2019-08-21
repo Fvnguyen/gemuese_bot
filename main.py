@@ -6,6 +6,7 @@ from telegram import Update
 import logging
 import os
 import pandas as pd
+import veg_processes as vp
 from datetime import datetime
 
 # Gemuesefunktionen
@@ -24,9 +25,10 @@ def suggestion():
     return suggestion
 
 def look_up(veggie):
-    approval = veggie.lower() in [x.lower() for x in seasonal()]
+    season_list = [x.lower() for x in seasonal()]
+    approval = vp.matching(veggie.lower(),season_list)
     in_master = veggie.lower() in [x.lower() for x in in_list()]
-    if approval:
+    if approval > 0.7:
         approval = "Mmmmh, Saisonal...( ͡° ͜ʖ ͡°)"
     else:
         if in_master:
