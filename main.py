@@ -36,8 +36,7 @@ dispatcher = updater.dispatcher
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',level=logging.INFO)
 
-# Dice rolling und start
-ROLLDICE = range(1)
+# start
 
 def start(update, context):
     context.bot.send_message(chat_id=update.message.chat_id, text="Hallo Ich bin Gemüse Bot und ich empfehle dir saisonales Gemüse.")
@@ -45,30 +44,8 @@ def start(update, context):
 start_handler = CommandHandler('start', start)
 dispatcher.add_handler(start_handler)
 
-
-def dice_roll(update,context):
-    update.message.reply_text('Please enter the number of sides, the die should have')
-
-    return ROLLDICE
-
-def cancel(update,context):
-    update.message.reply_text('Bye! I hope we can talk again some day.')
-    return ConversationHandler.END
-
-def rolldice(update, context):
-    roll = random.randint(1, int(update.message.text))
-    update.message.reply_text('You rolled: ' + str(roll))
-    return ConversationHandler.END
-
-conv_handler = ConversationHandler(
-        entry_points=[CommandHandler('rollDice', dice_roll)],
-        states={ROLLDICE: [RegexHandler('^[0-9]+$', rolldice)]},
-        fallbacks=[CommandHandler('cancel', cancel)]
-    )
-dispatcher.add_handler(conv_handler)
-
-
 #Veggy function
+veggie_state = "None"
 def suggested_veggie(update, context):
     context.bot.send_message(chat_id=update.message.chat_id, text="Warum kochst Du nicht etwas mit "+suggestion())
 
@@ -83,13 +60,35 @@ def veggie_list(update, context):
 veggieList_handler = CommandHandler('liste', veggie_list)
 dispatcher.add_handler(veggieList_handler)
 
-def veggie_lookup(update, context):
+""" def veggie_lookup(update, context):
     test_veg = ''.join(context.args).strip()
     approval = look_up(test_veg)
     context.bot.send_message(chat_id=update.message.chat_id, text=approval)
 
 veggieList_handler = CommandHandler('suche', veggie_lookup)
-dispatcher.add_handler(veggieList_handler)
+dispatcher.add_handler(veggieList_handler) """
+
+def start_lookup(update,context):
+    update.message.reply_text('Welches Gemüse oder Obst möchtest Du prüfen? (Antworte "cancel" zum abbrechen)')
+
+    return veggie_state
+
+def cancel(update,context):
+    update.message.reply_text('Tschüss bis zum nächsten mal.')
+    return ConversationHandler.END
+
+def veggie_lookup(update, context):
+    test_veg = ''.join(update.message.text).strip()
+    approval = look_up(test_veg)
+    update.message.reply_text(approval)
+    return ConversationHandler.END
+
+conv_handler = ConversationHandler(
+        entry_points=[CommandHandler('suche', start_lookup)],
+        states={veggie_state: [MessageHandler(Filters.text, veggie_lookup)]},
+        fallbacks=[CommandHandler('cancel', cancel)]
+    )
+dispatcher.add_handler(conv_handler)
 
 #Unknown command handler
 def unknown(update, context):
