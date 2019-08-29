@@ -55,7 +55,7 @@ start_handler = CommandHandler('start', start)
 dispatcher.add_handler(start_handler)
 
 #Veggy function
-veggie_state = "None"
+LOOKUP = range(1)
 def suggested_veggie(update, context):
     context.bot.send_message(chat_id=update.message.chat_id, text="Warum kochst Du nicht etwas mit "+suggestion())
 
@@ -70,18 +70,21 @@ def veggie_list(update, context):
 veggieList_handler = CommandHandler('liste', veggie_list)
 dispatcher.add_handler(veggieList_handler)
 
-""" def veggie_lookup(update, context):
-    test_veg = ''.join(context.args).strip()
-    approval = look_up(test_veg)
-    context.bot.send_message(chat_id=update.message.chat_id, text=approval)
+def recipe(update, context):
+    seasonal_list = ', '.join(seasonal())
+    recipe = vp.getrecipe(seasonal_list)
+    title = recipe['title']+':'
+    summary = recipe['summary']
+    context.bot.send_message(chat_id=update.message.chat_id, text=title)
+    context.bot.send_message(chat_id=update.message.chat_id, text=summary, parse_mode=telegram.ParseMode.HTML)
 
-veggieList_handler = CommandHandler('suche', veggie_lookup)
-dispatcher.add_handler(veggieList_handler) """
+recipe_handler = CommandHandler('rezept', recipe)
+dispatcher.add_handler(recipe_handler)
 
 def start_lookup(update,context):
     update.message.reply_text('Welches Gemüse oder Obst möchtest Du prüfen? (Antworte "cancel" zum abbrechen)')
 
-    return veggie_state
+    return LOOKUP
 
 def cancel(update,context):
     update.message.reply_text('Tschüss bis zum nächsten mal.')
@@ -95,7 +98,7 @@ def veggie_lookup(update, context):
 
 conv_handler = ConversationHandler(
         entry_points=[CommandHandler('suche', start_lookup)],
-        states={veggie_state: [MessageHandler(Filters.text, veggie_lookup)]},
+        states={LOOKUP: [MessageHandler(Filters.text, veggie_lookup)]},
         fallbacks=[CommandHandler('cancel', cancel)]
     )
 dispatcher.add_handler(conv_handler)
