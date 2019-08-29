@@ -71,7 +71,7 @@ veggieList_handler = CommandHandler('liste', veggie_list)
 dispatcher.add_handler(veggieList_handler)
 
 def recipe(update, context):
-    seasonal_list = ', '.join(seasonal())
+    seasonal_list = ','.join(sample(seasonal(),2))
     recipe = vp.getrecipe(seasonal_list)
     title = recipe['title']+':'
     summary = recipe['summary']
@@ -80,6 +80,17 @@ def recipe(update, context):
 
 recipe_handler = CommandHandler('rezept', recipe)
 dispatcher.add_handler(recipe_handler)
+
+def vrecipe(update, context):
+    seasonal_list = ','.join(sample(seasonal(),2))
+    recipe = vp.veggyrecipe(seasonal_list)
+    title = recipe['label']
+    summary = '['+title+']('+recipe['url']+')'
+    context.bot.send_message(chat_id=update.message.chat_id, text=title)
+    context.bot.send_message(chat_id=update.message.chat_id, text=summary, parse_mode=ParseMode.MARKDOWN)
+
+vrecipe_handler = CommandHandler('vrezept', vrecipe)
+dispatcher.add_handler(vrecipe_handler)
 
 def start_lookup(update,context):
     update.message.reply_text('Welches Gemüse oder Obst möchtest Du prüfen? (Antworte "cancel" zum abbrechen)')
