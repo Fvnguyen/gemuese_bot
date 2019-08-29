@@ -76,7 +76,7 @@ def recipe(update, context):
     title = recipe['title']+':'
     summary = recipe['summary']
     context.bot.send_message(chat_id=update.message.chat_id, text=title)
-    context.bot.send_message(chat_id=update.message.chat_id, text=summary, parse_mode=telegram.ParseMode.HTML)
+    context.bot.send_message(chat_id=update.message.chat_id, text=summary, parse_mode=ParseMode.HTML)
 
 recipe_handler = CommandHandler('rezept', recipe)
 dispatcher.add_handler(recipe_handler)
