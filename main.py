@@ -71,7 +71,7 @@ veggieList_handler = CommandHandler('liste', veggie_list)
 dispatcher.add_handler(veggieList_handler)
 
 def recipe(update, context):
-    seasonal_list = ','.join(sample(seasonal(),2))
+    seasonal_list = ','.join(random.sample(seasonal(),2))
     recipe = vp.getrecipe(seasonal_list)
     title = recipe['title']+':'
     summary = recipe['summary']
@@ -82,7 +82,7 @@ recipe_handler = CommandHandler('rezept', recipe)
 dispatcher.add_handler(recipe_handler)
 
 def vrecipe(update, context):
-    seasonal_list = ','.join(sample(seasonal(),2))
+    seasonal_list = ','.join(random.sample(seasonal(),2))
     recipe = vp.veggyrecipe(seasonal_list)
     title = recipe['label']
     summary = '['+title+']('+recipe['url']+')'
