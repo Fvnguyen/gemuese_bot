@@ -2,7 +2,7 @@
 import random
 import time
 from telegram.ext import Updater,CommandHandler,MessageHandler, Filters, RegexHandler, ConversationHandler
-from telegram import Update
+from telegram import Update,ParseMode
 import logging
 import os
 import pandas as pd
