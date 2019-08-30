@@ -10,11 +10,16 @@ import veg_processes as vp
 from datetime import datetime
 
 # Gemuesefunktionen
-ledger = pd.read_csv("gemuese_de.csv",encoding = "utf-8", sep = ";")
+ledger = pd.read_csv("gemuese_full.csv",encoding = "utf-8", sep = ";")
 def seasonal():
     current_month = datetime.today().month
     seasonal = ledger.query("Month == "+str(current_month)).query("Seasonal == True")["gemuese"].tolist()
     return seasonal
+
+def eng_seasonal():
+    current_month = datetime.today().month
+    seasonal = ledger.query("Month == "+str(current_month)).query("Seasonal == True")["vegetable"].tolist()
+    return eng_seasonal
 
 def in_list():
     master = ledger["gemuese"].tolist()
@@ -71,7 +76,7 @@ veggieList_handler = CommandHandler('liste', veggie_list)
 dispatcher.add_handler(veggieList_handler)
 
 def recipe(update, context):
-    seasonal_list = ','.join(random.sample(seasonal(),2))
+    seasonal_list = ','.join(random.sample(eng_seasonal(),2))
     recipe = vp.getrecipe(seasonal_list)
     title = recipe['title']+':'
     summary = recipe['summary']
@@ -82,7 +87,7 @@ recipe_handler = CommandHandler('rezept', recipe)
 dispatcher.add_handler(recipe_handler)
 
 def vrecipe(update, context):
-    seasonal_list = ','.join(random.sample(seasonal(),2))
+    seasonal_list = ','.join(random.sample(eng_seasonal(),2))
     recipe = vp.veggyrecipe(seasonal_list)
     title = recipe['label']
     summary = recipe['url']

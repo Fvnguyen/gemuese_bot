@@ -1,0 +1,541 @@
+gemuese,Month,Seasonal,vegetable
+Artischocken,1,False,Globe artichokes
+Auberginen,1,False,Eggplant
+Blumenkohl,1,False,Cauliflower
+Bohnen,1,False,Beans
+Buschbohnen,1,False,Organic bush beans
+Stangenbohnen,1,False,Runner beans
+Brokkoli,1,False,broccoli
+Chicorée,1,True,witloofs/Belgian endives
+Chinakohl,1,True,Chinese cabbage
+Dicke Bohnen,1,False,Broad beans
+Eisbergsalat,1,False,Iceberg lettuce
+Endivien,1,False,Endive
+Erbsen,1,False,Peas
+Zuckererbsen,1,False,Snow pea
+Feldsalat,1,False,Mache salad
+Rapunzel,1,False,Rapunzel
+Fenchel,1,False,Fennel
+Paprika,1,False,Paprika
+Grünkohl,1,False,Kale
+Gurken,1,False,Cucumbers
+Kopfsalat,1,False,Head lettuce
+Kürbis,1,False,Pumpkin
+Lollo Rossa,1,False,Lollo Rossa
+Lollo Bionda,1,False,Lollo bionda
+Mangold,1,False,Chards/beet leaves
+Karotten,1,False,Carrots
+Möhren,1,False,Daucus (carrots
+Porree,1,False,Leeks
+Lauch,1,False,leeks
+Radicchio,1,False,Radicchio
+Radieschen,1,False,Radishes
+Rettich,1,False,Radish
+Rhabarber,1,False,Rhubarbs
+Rosenkohl,1,False,Brussel sprouts
+Rote Beete,1,True,Beetroot
+Rotkohl,1,True,Red cabbage
+Schwarzwurzeln,1,False,Salsifies
+Spargel,1,False,Asparagus
+Spinat,1,False,Spinach
+Spitzkohl,1,False,White cabbage
+Sellerie,1,False,Celery
+Tomaten,1,False,Tomatoes
+Weißkohl,1,False,Cabbage
+Zucchini,1,False,Zucchini
+Zwiebeln,1,True,Onions
+Artischocken,2,False,Globe artichokes
+Auberginen,2,False,Eggplant
+Blumenkohl,2,False,Cauliflower
+Bohnen,2,False,Beans
+Buschbohnen,2,False,Organic bush beans
+Stangenbohnen,2,False,Runner beans
+Brokkoli,2,False,broccoli
+Chicorée,2,True,witloofs/Belgian endives
+Chinakohl,2,True,Chinese cabbage
+Dicke Bohnen,2,False,Broad beans
+Eisbergsalat,2,False,Iceberg lettuce
+Endivien,2,False,Endive
+Erbsen,2,False,Peas
+Zuckererbsen,2,False,Snow pea
+Feldsalat,2,False,Mache salad
+Rapunzel,2,False,Rapunzel
+Fenchel,2,False,Fennel
+Paprika,2,False,Paprika
+Grünkohl,2,False,Kale
+Gurken,2,False,Cucumbers
+Kopfsalat,2,False,Head lettuce
+Kürbis,2,False,Pumpkin
+Lollo Rossa,2,False,Lollo Rossa
+Lollo Bionda,2,False,Lollo bionda
+Mangold,2,False,Chards/beet leaves
+Karotten,2,False,Carrots
+Möhren,2,False,Daucus (carrots
+Porree,2,False,Leeks
+Lauch,2,False,leeks
+Radicchio,2,False,Radicchio
+Radieschen,2,False,Radishes
+Rettich,2,False,Radish
+Rhabarber,2,False,Rhubarbs
+Rosenkohl,2,False,Brussel sprouts
+Rote Beete,2,True,Beetroot
+Rotkohl,2,True,Red cabbage
+Schwarzwurzeln,2,False,Salsifies
+Spargel,2,False,Asparagus
+Spinat,2,False,Spinach
+Spitzkohl,2,False,White cabbage
+Sellerie,2,False,Celery
+Tomaten,2,False,Tomatoes
+Weißkohl,2,True,Cabbage
+Zucchini,2,False,Zucchini
+Zwiebeln,2,True,Onions
+Artischocken,3,False,Globe artichokes
+Auberginen,3,False,Eggplant
+Blumenkohl,3,False,Cauliflower
+Bohnen,3,False,Beans
+Buschbohnen,3,False,Organic bush beans
+Stangenbohnen,3,False,Runner beans
+Brokkoli,3,False,broccoli
+Chicorée,3,True,witloofs/Belgian endives
+Chinakohl,3,False,Chinese cabbage
+Dicke Bohnen,3,False,Broad beans
+Eisbergsalat,3,False,Iceberg lettuce
+Endivien,3,False,Endive
+Erbsen,3,False,Peas
+Zuckererbsen,3,False,Snow pea
+Feldsalat,3,False,Mache salad
+Rapunzel,3,False,Rapunzel
+Fenchel,3,False,Fennel
+Paprika,3,False,Paprika
+Grünkohl,3,False,Kale
+Gurken,3,False,Cucumbers
+Kopfsalat,3,False,Head lettuce
+Kürbis,3,False,Pumpkin
+Lollo Rossa,3,False,Lollo Rossa
+Lollo Bionda,3,False,Lollo bionda
+Mangold,3,False,Chards/beet leaves
+Karotten,3,False,Carrots
+Möhren,3,False,Daucus (carrots
+Porree,3,False,Leeks
+Lauch,3,False,leeks
+Radicchio,3,False,Radicchio
+Radieschen,3,False,Radishes
+Rettich,3,False,Radish
+Rhabarber,3,False,Rhubarbs
+Rosenkohl,3,False,Brussel sprouts
+Rote Beete,3,True,Beetroot
+Rotkohl,3,False,Red cabbage
+Schwarzwurzeln,3,False,Salsifies
+Spargel,3,False,Asparagus
+Spinat,3,False,Spinach
+Spitzkohl,3,False,White cabbage
+Sellerie,3,False,Celery
+Tomaten,3,False,Tomatoes
+Weißkohl,3,True,Cabbage
+Zucchini,3,False,Zucchini
+Zwiebeln,3,True,Onions
+Artischocken,4,False,Globe artichokes
+Auberginen,4,False,Eggplant
+Blumenkohl,4,False,Cauliflower
+Bohnen,4,False,Beans
+Buschbohnen,4,False,Organic bush beans
+Stangenbohnen,4,False,Runner beans
+Brokkoli,4,False,broccoli
+Chicorée,4,True,witloofs/Belgian endives
+Chinakohl,4,False,Chinese cabbage
+Dicke Bohnen,4,False,Broad beans
+Eisbergsalat,4,False,Iceberg lettuce
+Endivien,4,False,Endive
+Erbsen,4,False,Peas
+Zuckererbsen,4,False,Snow pea
+Feldsalat,4,False,Mache salad
+Rapunzel,4,False,Rapunzel
+Fenchel,4,False,Fennel
+Paprika,4,False,Paprika
+Grünkohl,4,False,Kale
+Gurken,4,False,Cucumbers
+Kopfsalat,4,False,Head lettuce
+Kürbis,4,False,Pumpkin
+Lollo Rossa,4,False,Lollo Rossa
+Lollo Bionda,4,False,Lollo bionda
+Mangold,4,False,Chards/beet leaves
+Karotten,4,False,Carrots
+Möhren,4,False,Daucus (carrots
+Porree,4,False,Leeks
+Lauch,4,False,leeks
+Radicchio,4,False,Radicchio
+Radieschen,4,True,Radishes
+Rettich,4,False,Radish
+Rhabarber,4,True,Rhubarbs
+Rosenkohl,4,False,Brussel sprouts
+Rote Beete,4,False,Beetroot
+Rotkohl,4,False,Red cabbage
+Schwarzwurzeln,4,False,Salsifies
+Spargel,4,False,Asparagus
+Spinat,4,True,Spinach
+Spitzkohl,4,False,White cabbage
+Sellerie,4,False,Celery
+Tomaten,4,False,Tomatoes
+Weißkohl,4,False,Cabbage
+Zucchini,4,False,Zucchini
+Zwiebeln,4,True,Onions
+Artischocken,5,False,Globe artichokes
+Auberginen,5,False,Eggplant
+Blumenkohl,5,False,Cauliflower
+Bohnen,5,False,Beans
+Buschbohnen,5,False,Organic bush beans
+Stangenbohnen,5,False,Runner beans
+Brokkoli,5,False,broccoli
+Chicorée,5,True,witloofs/Belgian endives
+Chinakohl,5,True,Chinese cabbage
+Dicke Bohnen,5,False,Broad beans
+Eisbergsalat,5,False,Iceberg lettuce
+Endivien,5,False,Endive
+Erbsen,5,False,Peas
+Zuckererbsen,5,False,Snow pea
+Feldsalat,5,True,Mache salad
+Rapunzel,5,True,Rapunzel
+Fenchel,5,False,Fennel
+Paprika,5,False,Paprika
+Grünkohl,5,False,Kale
+Gurken,5,False,Cucumbers
+Kopfsalat,5,True,Head lettuce
+Kürbis,5,False,Pumpkin
+Lollo Rossa,5,True,Lollo Rossa
+Lollo Bionda,5,True,Lollo bionda
+Mangold,5,False,Chards/beet leaves
+Karotten,5,False,Carrots
+Möhren,5,False,Daucus (carrots
+Porree,5,False,Leeks
+Lauch,5,False,leeks
+Radicchio,5,False,Radicchio
+Radieschen,5,True,Radishes
+Rettich,5,False,Radish
+Rhabarber,5,True,Rhubarbs
+Rosenkohl,5,False,Brussel sprouts
+Rote Beete,5,False,Beetroot
+Rotkohl,5,True,Red cabbage
+Schwarzwurzeln,5,False,Salsifies
+Spargel,5,True,Asparagus
+Spinat,5,True,Spinach
+Spitzkohl,5,True,White cabbage
+Sellerie,5,False,Celery
+Tomaten,5,False,Tomatoes
+Weißkohl,5,True,Cabbage
+Zucchini,5,False,Zucchini
+Zwiebeln,5,False,Onions
+Artischocken,6,False,Globe artichokes
+Auberginen,6,False,Eggplant
+Blumenkohl,6,True,Cauliflower
+Bohnen,6,False,Beans
+Buschbohnen,6,False,Organic bush beans
+Stangenbohnen,6,False,Runner beans
+Brokkoli,6,True,broccoli
+Chicorée,6,True,witloofs/Belgian endives
+Chinakohl,6,True,Chinese cabbage
+Dicke Bohnen,6,True,Broad beans
+Eisbergsalat,6,True,Iceberg lettuce
+Endivien,6,False,Endive
+Erbsen,6,True,Peas
+Zuckererbsen,6,True,Snow pea
+Feldsalat,6,False,Mache salad
+Rapunzel,6,False,Rapunzel
+Fenchel,6,True,Fennel
+Paprika,6,False,Paprika
+Grünkohl,6,False,Kale
+Gurken,6,True,Cucumbers
+Kopfsalat,6,True,Head lettuce
+Kürbis,6,False,Pumpkin
+Lollo Rossa,6,True,Lollo Rossa
+Lollo Bionda,6,True,Lollo bionda
+Mangold,6,False,Chards/beet leaves
+Karotten,6,False,Carrots
+Möhren,6,False,Daucus (carrots
+Porree,6,False,Leeks
+Lauch,6,False,leeks
+Radicchio,6,True,Radicchio
+Radieschen,6,True,Radishes
+Rettich,6,True,Radish
+Rhabarber,6,True,Rhubarbs
+Rosenkohl,6,False,Brussel sprouts
+Rote Beete,6,False,Beetroot
+Rotkohl,6,True,Red cabbage
+Schwarzwurzeln,6,False,Salsifies
+Spargel,6,True,Asparagus
+Spinat,6,True,Spinach
+Spitzkohl,6,True,White cabbage
+Sellerie,6,True,Celery
+Tomaten,6,True,Tomatoes
+Weißkohl,6,True,Cabbage
+Zucchini,6,False,Zucchini
+Zwiebeln,6,False,Onions
+Artischocken,7,False,Globe artichokes
+Auberginen,7,False,Eggplant
+Blumenkohl,7,True,Cauliflower
+Bohnen,7,True,Beans
+Buschbohnen,7,True,Organic bush beans
+Stangenbohnen,7,True,Runner beans
+Brokkoli,7,True,broccoli
+Chicorée,7,False,witloofs/Belgian endives
+Chinakohl,7,True,Chinese cabbage
+Dicke Bohnen,7,True,Broad beans
+Eisbergsalat,7,True,Iceberg lettuce
+Endivien,7,False,Endive
+Erbsen,7,True,Peas
+Zuckererbsen,7,True,Snow pea
+Feldsalat,7,False,Mache salad
+Rapunzel,7,False,Rapunzel
+Fenchel,7,True,Fennel
+Paprika,7,False,Paprika
+Grünkohl,7,False,Kale
+Gurken,7,True,Cucumbers
+Kopfsalat,7,True,Head lettuce
+Kürbis,7,False,Pumpkin
+Lollo Rossa,7,True,Lollo Rossa
+Lollo Bionda,7,True,Lollo bionda
+Mangold,7,True,Chards/beet leaves
+Karotten,7,False,Carrots
+Möhren,7,False,Daucus (carrots
+Porree,7,True,Leeks
+Lauch,7,True,leeks
+Radicchio,7,True,Radicchio
+Radieschen,7,True,Radishes
+Rettich,7,True,Radish
+Rhabarber,7,False,Rhubarbs
+Rosenkohl,7,False,Brussel sprouts
+Rote Beete,7,False,Beetroot
+Rotkohl,7,True,Red cabbage
+Schwarzwurzeln,7,False,Salsifies
+Spargel,7,False,Asparagus
+Spinat,7,True,Spinach
+Spitzkohl,7,True,White cabbage
+Sellerie,7,True,Celery
+Tomaten,7,True,Tomatoes
+Weißkohl,7,True,Cabbage
+Zucchini,7,True,Zucchini
+Zwiebeln,7,False,Onions
+Artischocken,8,False,Globe artichokes
+Auberginen,8,False,Eggplant
+Blumenkohl,8,True,Cauliflower
+Bohnen,8,True,Beans
+Buschbohnen,8,True,Organic bush beans
+Stangenbohnen,8,True,Runner beans
+Brokkoli,8,True,broccoli
+Chicorée,8,False,witloofs/Belgian endives
+Chinakohl,8,True,Chinese cabbage
+Dicke Bohnen,8,False,Broad beans
+Eisbergsalat,8,True,Iceberg lettuce
+Endivien,8,False,Endive
+Erbsen,8,False,Peas
+Zuckererbsen,8,False,Snow pea
+Feldsalat,8,False,Mache salad
+Rapunzel,8,False,Rapunzel
+Fenchel,8,True,Fennel
+Paprika,8,False,Paprika
+Grünkohl,8,False,Kale
+Gurken,8,True,Cucumbers
+Kopfsalat,8,True,Head lettuce
+Kürbis,8,True,Pumpkin
+Lollo Rossa,8,True,Lollo Rossa
+Lollo Bionda,8,True,Lollo bionda
+Mangold,8,True,Chards/beet leaves
+Karotten,8,True,Carrots
+Möhren,8,True,Daucus (carrots
+Porree,8,True,Leeks
+Lauch,8,True,leeks
+Radicchio,8,True,Radicchio
+Radieschen,8,True,Radishes
+Rettich,8,True,Radish
+Rhabarber,8,False,Rhubarbs
+Rosenkohl,8,False,Brussel sprouts
+Rote Beete,8,False,Beetroot
+Rotkohl,8,True,Red cabbage
+Schwarzwurzeln,8,False,Salsifies
+Spargel,8,False,Asparagus
+Spinat,8,True,Spinach
+Spitzkohl,8,True,White cabbage
+Sellerie,8,True,Celery
+Tomaten,8,True,Tomatoes
+Weißkohl,8,True,Cabbage
+Zucchini,8,True,Zucchini
+Zwiebeln,8,True,Onions
+Artischocken,9,False,Globe artichokes
+Auberginen,9,False,Eggplant
+Blumenkohl,9,True,Cauliflower
+Bohnen,9,True,Beans
+Buschbohnen,9,True,Organic bush beans
+Stangenbohnen,9,True,Runner beans
+Brokkoli,9,True,broccoli
+Chicorée,9,False,witloofs/Belgian endives
+Chinakohl,9,True,Chinese cabbage
+Dicke Bohnen,9,False,Broad beans
+Eisbergsalat,9,True,Iceberg lettuce
+Endivien,9,True,Endive
+Erbsen,9,False,Peas
+Zuckererbsen,9,False,Snow pea
+Feldsalat,9,False,Mache salad
+Rapunzel,9,False,Rapunzel
+Fenchel,9,True,Fennel
+Paprika,9,False,Paprika
+Grünkohl,9,False,Kale
+Gurken,9,False,Cucumbers
+Kopfsalat,9,True,Head lettuce
+Kürbis,9,True,Pumpkin
+Lollo Rossa,9,True,Lollo Rossa
+Lollo Bionda,9,True,Lollo bionda
+Mangold,9,True,Chards/beet leaves
+Karotten,9,False,Carrots
+Möhren,9,False,Daucus (carrots
+Porree,9,True,Leeks
+Lauch,9,True,leeks
+Radicchio,9,True,Radicchio
+Radieschen,9,True,Radishes
+Rettich,9,True,Radish
+Rhabarber,9,False,Rhubarbs
+Rosenkohl,9,False,Brussel sprouts
+Rote Beete,9,True,Beetroot
+Rotkohl,9,True,Red cabbage
+Schwarzwurzeln,9,False,Salsifies
+Spargel,9,False,Asparagus
+Spinat,9,True,Spinach
+Spitzkohl,9,True,White cabbage
+Sellerie,9,True,Celery
+Tomaten,9,False,Tomatoes
+Weißkohl,9,True,Cabbage
+Zucchini,9,False,Zucchini
+Zwiebeln,9,True,Onions
+Artischocken,10,False,Globe artichokes
+Auberginen,10,False,Eggplant
+Blumenkohl,10,True,Cauliflower
+Bohnen,10,True,Beans
+Buschbohnen,10,True,Organic bush beans
+Stangenbohnen,10,True,Runner beans
+Brokkoli,10,True,broccoli
+Chicorée,10,False,witloofs/Belgian endives
+Chinakohl,10,True,Chinese cabbage
+Dicke Bohnen,10,False,Broad beans
+Eisbergsalat,10,False,Iceberg lettuce
+Endivien,10,True,Endive
+Erbsen,10,False,Peas
+Zuckererbsen,10,False,Snow pea
+Feldsalat,10,True,Mache salad
+Rapunzel,10,True,Rapunzel
+Fenchel,10,True,Fennel
+Paprika,10,False,Paprika
+Grünkohl,10,False,Kale
+Gurken,10,False,Cucumbers
+Kopfsalat,10,True,Head lettuce
+Kürbis,10,True,Pumpkin
+Lollo Rossa,10,True,Lollo Rossa
+Lollo Bionda,10,True,Lollo bionda
+Mangold,10,False,Chards/beet leaves
+Karotten,10,True,Carrots
+Möhren,10,True,Daucus (carrots
+Porree,10,True,Leeks
+Lauch,10,True,leeks
+Radicchio,10,True,Radicchio
+Radieschen,10,True,Radishes
+Rettich,10,True,Radish
+Rhabarber,10,False,Rhubarbs
+Rosenkohl,10,True,Brussel sprouts
+Rote Beete,10,True,Beetroot
+Rotkohl,10,True,Red cabbage
+Schwarzwurzeln,10,False,Salsifies
+Spargel,10,False,Asparagus
+Spinat,10,True,Spinach
+Spitzkohl,10,True,White cabbage
+Sellerie,10,True,Celery
+Tomaten,10,False,Tomatoes
+Weißkohl,10,True,Cabbage
+Zucchini,10,False,Zucchini
+Zwiebeln,10,True,Onions
+Artischocken,11,False,Globe artichokes
+Auberginen,11,False,Eggplant
+Blumenkohl,11,False,Cauliflower
+Bohnen,11,False,Beans
+Buschbohnen,11,False,Organic bush beans
+Stangenbohnen,11,False,Runner beans
+Brokkoli,11,False,broccoli
+Chicorée,11,False,witloofs/Belgian endives
+Chinakohl,11,True,Chinese cabbage
+Dicke Bohnen,11,False,Broad beans
+Eisbergsalat,11,False,Iceberg lettuce
+Endivien,11,False,Endive
+Erbsen,11,False,Peas
+Zuckererbsen,11,False,Snow pea
+Feldsalat,11,True,Mache salad
+Rapunzel,11,True,Rapunzel
+Fenchel,11,False,Fennel
+Paprika,11,False,Paprika
+Grünkohl,11,True,Kale
+Gurken,11,False,Cucumbers
+Kopfsalat,11,False,Head lettuce
+Kürbis,11,False,Pumpkin
+Lollo Rossa,11,False,Lollo Rossa
+Lollo Bionda,11,False,Lollo bionda
+Mangold,11,False,Chards/beet leaves
+Karotten,11,True,Carrots
+Möhren,11,True,Daucus (carrots
+Porree,11,True,Leeks
+Lauch,11,True,leeks
+Radicchio,11,False,Radicchio
+Radieschen,11,False,Radishes
+Rettich,11,False,Radish
+Rhabarber,11,False,Rhubarbs
+Rosenkohl,11,True,Brussel sprouts
+Rote Beete,11,True,Beetroot
+Rotkohl,11,True,Red cabbage
+Schwarzwurzeln,11,False,Salsifies
+Spargel,11,False,Asparagus
+Spinat,11,True,Spinach
+Spitzkohl,11,True,White cabbage
+Sellerie,11,False,Celery
+Tomaten,11,False,Tomatoes
+Weißkohl,11,True,Cabbage
+Zucchini,11,False,Zucchini
+Zwiebeln,11,True,Onions
+Artischocken,12,False,Globe artichokes
+Auberginen,12,False,Eggplant
+Blumenkohl,12,False,Cauliflower
+Bohnen,12,False,Beans
+Buschbohnen,12,False,Organic bush beans
+Stangenbohnen,12,False,Runner beans
+Brokkoli,12,False,broccoli
+Chicorée,12,True,witloofs/Belgian endives
+Chinakohl,12,True,Chinese cabbage
+Dicke Bohnen,12,False,Broad beans
+Eisbergsalat,12,False,Iceberg lettuce
+Endivien,12,False,Endive
+Erbsen,12,False,Peas
+Zuckererbsen,12,False,Snow pea
+Feldsalat,12,True,Mache salad
+Rapunzel,12,True,Rapunzel
+Fenchel,12,False,Fennel
+Paprika,12,False,Paprika
+Grünkohl,12,True,Kale
+Gurken,12,False,Cucumbers
+Kopfsalat,12,False,Head lettuce
+Kürbis,12,False,Pumpkin
+Lollo Rossa,12,False,Lollo Rossa
+Lollo Bionda,12,False,Lollo bionda
+Mangold,12,False,Chards/beet leaves
+Karotten,12,True,Carrots
+Möhren,12,True,Daucus (carrots
+Porree,12,True,Leeks
+Lauch,12,True,leeks
+Radicchio,12,False,Radicchio
+Radieschen,12,False,Radishes
+Rettich,12,False,Radish
+Rhabarber,12,False,Rhubarbs
+Rosenkohl,12,False,Brussel sprouts
+Rote Beete,12,True,Beetroot
+Rotkohl,12,True,Red cabbage
+Schwarzwurzeln,12,False,Salsifies
+Spargel,12,False,Asparagus
+Spinat,12,False,Spinach
+Spitzkohl,12,False,White cabbage
+Sellerie,12,False,Celery
+Tomaten,12,False,Tomatoes
+Weißkohl,12,True,Cabbage
+Zucchini,12,False,Zucchini
+Zwiebeln,12,True,Onions
