@@ -19,7 +19,7 @@ def seasonal():
 def eng_seasonal():
     current_month = datetime.today().month
     seasonal = ledger.query("Month == "+str(current_month)).query("Seasonal == True")["vegetable"].tolist()
-    return eng_seasonal
+    return seasonal
 
 def in_list():
     master = ledger["gemuese"].tolist()
