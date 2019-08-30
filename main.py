@@ -90,9 +90,8 @@ def vrecipe(update, context):
     seasonal_list = ','.join(random.sample(eng_seasonal(),2))
     recipe = vp.veggyrecipe(seasonal_list)
     title = recipe['label']
-    summary = recipe['url']
-    context.bot.send_message(chat_id=update.message.chat_id, text=title)
-    context.bot.send_message(chat_id=update.message.chat_id, text=summary)
+    summary = '['+title+']'+'('+recipe['url']+')'
+    context.bot.send_message(chat_id=update.message.chat_id, text=summary, parse_mode=ParseMode.MARKDOWN)
 
 vrecipe_handler = CommandHandler('vrezept', vrecipe)
 dispatcher.add_handler(vrecipe_handler)
