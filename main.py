@@ -10,7 +10,7 @@ import veg_processes as vp
 from datetime import datetime
 
 # Gemuesefunktionen
-ledger = pd.read_csv("gemuese_full.csv",encoding = "utf-8", sep = ";")
+ledger = pd.read_csv("gemuese_full.csv",encoding = "utf-8", sep = ",")
 def seasonal():
     current_month = datetime.today().month
     seasonal = ledger.query("Month == "+str(current_month)).query("Seasonal == True")["gemuese"].tolist()
