@@ -131,13 +131,15 @@ def recipe2(update, context):
 updater.dispatcher.add_handler(CommandHandler('rezept2', recipe2))
 
 def diet(update, context):
-    query = update.callback_query
+    query = str(update.callback_query.data)
     print(query)
     if query == 'NONE':
-        recipe()
+        seasonal_list = ','.join(random.sample(eng_seasonal(),2))
+        recipe = vp.veggyrecipe(seasonal_list,query)
+        title = recipe['label']
+        summary = '['+title+']'+'('+recipe['url']+')'
+        context.bot.send_message(chat_id=update.message.chat_id, text=summary, parse_mode=ParseMode.MARKDOWN)
     else:
-        print(query)
-        query.edit_message_text(text="Ausgewählte Option: {}".format(query.data))
         seasonal_list = ','.join(random.sample(eng_seasonal(),2))
         recipe = vp.veggyrecipe(seasonal_list,query)
         title = recipe['label']
