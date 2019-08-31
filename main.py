@@ -1,8 +1,8 @@
 # Let's make a dice bot
 import random
 import time
-from telegram.ext import Updater,CommandHandler,MessageHandler, Filters, RegexHandler, ConversationHandler
-from telegram import Update,ParseMode
+from telegram.ext import Updater,CommandHandler,MessageHandler, Filters, RegexHandler, ConversationHandler,  CallbackQueryHandler
+from telegram import Update,ParseMode,InlineKeyboardButton, InlineKeyboardMarkup
 import logging
 import os
 import pandas as pd
@@ -117,6 +117,29 @@ conv_handler = ConversationHandler(
         fallbacks=[CommandHandler('cancel', cancel)]
     )
 dispatcher.add_handler(conv_handler)
+
+def recipe2(update, context):
+    keyboard = [[InlineKeyboardButton("Keine Einschränkung", callback_data='NONE'),
+                 InlineKeyboardButton("Vegetarisch", callback_data='vegetarian')],
+
+                [InlineKeyboardButton("Vegan", callback_data='vegan')]]
+
+    reply_markup = InlineKeyboardMarkup(keyboard)
+
+    update.message.reply_text('Soll ich ein Rezept mit Einschränkungen suchen?', reply_markup=reply_markup)
+
+updater.dispatcher.add_handler(CommandHandler('rezept2', recipe2))
+
+def diet(update, context):
+    query = update.callback_query
+    if query == 'NONE':
+        recipe()
+    else:
+        query.edit_message_text(text="Ausgewählte Option: {}".format(query.data))
+        vrecipe()
+
+updater.dispatcher.add_handler(CallbackQueryHandler(diet))
+
 
 #Unknown command handler
 def unknown(update, context):
