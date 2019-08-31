@@ -41,8 +41,9 @@ def getrecipe(ingredient_list):
     summary = response_summary.json()
     return summary
   
-def veggyrecipe(ingredient_list):
-    url = 'https://api.edamam.com/search?q='+ingredient_list+'&app_id=48df8510bddb6aeeb43853f947ec1f02&app_key=6e9fd246&health=vegetarian'
+def veggyrecipe(ingredient_list,diet):
+    diettag = '&health='+diet
+    url = 'https://api.edamam.com/search?q='+ingredient_list+'&app_id=48df8510bddb6aeeb43853f947ec1f02&app_key=6e9fd246'+diettag
     response = requests.request("GET", url)
     recipe = response.json()['hits'][0]['recipe']
     return recipe
