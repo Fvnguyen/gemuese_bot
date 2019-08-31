@@ -98,7 +98,7 @@ dispatcher.add_handler(veggieList_handler)
 # dispatcher.add_handler(vrecipe_handler)
 
 def start_lookup(update,context):
-    update.message.reply_text('Welches Gemüse oder Obst möchtest Du prüfen? (Antworte "cancel" zum abbrechen)')
+    update.message.reply_text('Welches Gemüse möchtest Du prüfen? (Antworte "cancel" zum abbrechen)')
 
     return LOOKUP
 
