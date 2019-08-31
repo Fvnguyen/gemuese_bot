@@ -75,26 +75,26 @@ def veggie_list(update, context):
 veggieList_handler = CommandHandler('liste', veggie_list)
 dispatcher.add_handler(veggieList_handler)
 
-def recipe(update, context):
-    seasonal_list = ','.join(random.sample(eng_seasonal(),2))
-    recipe = vp.getrecipe(seasonal_list)
-    title = recipe['title']+':'
-    summary = recipe['summary']
-    context.bot.send_message(chat_id=update.message.chat_id, text=title)
-    context.bot.send_message(chat_id=update.message.chat_id, text=summary, parse_mode=ParseMode.HTML)
+# def recipe(update, context):
+#     seasonal_list = ','.join(random.sample(eng_seasonal(),2))
+#     recipe = vp.getrecipe(seasonal_list)
+#     title = recipe['title']+':'
+#     summary = recipe['summary']
+#     context.bot.send_message(chat_id=update.message.chat_id, text=title)
+#     context.bot.send_message(chat_id=update.message.chat_id, text=summary, parse_mode=ParseMode.HTML)
 
-recipe_handler = CommandHandler('rezept', recipe)
-dispatcher.add_handler(recipe_handler)
+# recipe_handler = CommandHandler('rezept', recipe)
+# dispatcher.add_handler(recipe_handler)
 
-def vrecipe(update, context):
-    seasonal_list = ','.join(random.sample(eng_seasonal(),2))
-    recipe = vp.veggyrecipe(seasonal_list)
-    title = recipe['label']
-    summary = '['+title+']'+'('+recipe['url']+')'
-    context.bot.send_message(chat_id=update.message.chat_id, text=summary, parse_mode=ParseMode.MARKDOWN)
+# def vrecipe(update, context):
+#     seasonal_list = ','.join(random.sample(eng_seasonal(),2))
+#     recipe = vp.veggyrecipe(seasonal_list)
+#     title = recipe['label']
+#     summary = '['+title+']'+'('+recipe['url']+')'
+#     context.bot.send_message(chat_id=update.message.chat_id, text=summary, parse_mode=ParseMode.MARKDOWN)
 
-vrecipe_handler = CommandHandler('vrezept', vrecipe)
-dispatcher.add_handler(vrecipe_handler)
+# vrecipe_handler = CommandHandler('vrezept', vrecipe)
+# dispatcher.add_handler(vrecipe_handler)
 
 def start_lookup(update,context):
     update.message.reply_text('Welches Gemüse oder Obst möchtest Du prüfen? (Antworte "cancel" zum abbrechen)')
@@ -118,7 +118,7 @@ conv_handler = ConversationHandler(
     )
 dispatcher.add_handler(conv_handler)
 
-def recipe2(update, context):
+def recipe(update, context):
     keyboard = [[InlineKeyboardButton("Keine Einschränkung", callback_data='NONE'),
                  InlineKeyboardButton("Vegetarisch", callback_data='vegetarian')],
 
@@ -128,7 +128,7 @@ def recipe2(update, context):
 
     update.message.reply_text('Soll ich ein Rezept mit Einschränkungen suchen?', reply_markup=reply_markup)
 
-updater.dispatcher.add_handler(CommandHandler('rezept2', recipe2))
+updater.dispatcher.add_handler(CommandHandler('rezept', recipe))
 
 def diet(update, context):
     query = update.callback_query
@@ -136,13 +136,19 @@ def diet(update, context):
     print(answer)
     if answer == 'NONE':
         seasonal_list = ','.join(random.sample(eng_seasonal(),2))
-        recipe = vp.veggyrecipe(seasonal_list,'')
+        recipe = vp.getrecipe(seasonal_list)
+        title = recipe['label']
+        summary = '['+title+']'+'('+recipe['url']+')'
+        query.edit_message_text(text=summary,parse_mode=ParseMode.MARKDOWN)
+    elif answer == 'vegetarian':
+        seasonal_list = ','.join(random.sample(eng_seasonal(),2))
+        recipe = vp.veggyrecipe(seasonal_list)
         title = recipe['label']
         summary = '['+title+']'+'('+recipe['url']+')'
         query.edit_message_text(text=summary,parse_mode=ParseMode.MARKDOWN)
     else:
         seasonal_list = ','.join(random.sample(eng_seasonal(),2))
-        recipe = vp.veggyrecipe(seasonal_list,answer)
+        recipe = vp.veganrecipe(seasonal_list)
         title = recipe['label']
         summary = '['+title+']'+'('+recipe['url']+')'
         query.edit_message_text(text=summary,parse_mode=ParseMode.MARKDOWN)

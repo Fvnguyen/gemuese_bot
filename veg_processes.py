@@ -26,24 +26,35 @@ def matching(text,master_list):
     return result
 
 # Get's recipes based on ingredient_list
-def getrecipe(ingredient_list):
-    recipe_url = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients"
-    querystring = {"number":"1","ranking":"2","ignorePantry":"false","ingredients":ingredient_list}
-    headers = {
-        'x-rapidapi-host': "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-        'x-rapidapi-key': "e8c26025abmsh045b21e5a969e8ap15fc5djsnbdc016803368"
-        }
+# def getrecipe(ingredient_list):
+#     recipe_url = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients"
+#     querystring = {"number":"1","ranking":"2","ignorePantry":"false","ingredients":ingredient_list}
+#     headers = {
+#         'x-rapidapi-host': "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+#         'x-rapidapi-key': "e8c26025abmsh045b21e5a969e8ap15fc5djsnbdc016803368"
+#         }
 
-    response = requests.request("GET", recipe_url, headers=headers, params=querystring)
-    id = response.json()[0]['id']
-    summ_url = 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/' + str(id) + '/summary'
-    response_summary  = requests.request("GET", summ_url, headers=headers)
-    summary = response_summary.json()
-    return summary
+#     response = requests.request("GET", recipe_url, headers=headers, params=querystring)
+#     id = response.json()[0]['id']
+#     summ_url = 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/' + str(id) + '/summary'
+#     response_summary  = requests.request("GET", summ_url, headers=headers)
+#     summary = response_summary.json()
+#     return summary
   
-def veggyrecipe(ingredient_list,diet):
-    diettag = '&health='+diet
-    url = 'https://api.edamam.com/search?q='+ingredient_list+'&app_id=48df8510bddb6aeeb43853f947ec1f02&app_key=6e9fd246'+diettag
+def veggyrecipe(ingredient_list):
+    url = 'https://api.edamam.com/search?q='+ingredient_list+'&app_id=48df8510bddb6aeeb43853f947ec1f02&app_key=6e9fd246&health=vegetarian'
+    response = requests.request("GET", url)
+    recipe = response.json()['hits'][0]['recipe']
+    return recipe
+
+def veganrecipe(ingredient_list):
+    url = 'https://api.edamam.com/search?q='+ingredient_list+'&app_id=48df8510bddb6aeeb43853f947ec1f02&app_key=6e9fd246&health=vegan'
+    response = requests.request("GET", url)
+    recipe = response.json()['hits'][0]['recipe']
+    return recipe
+
+def getrecipe(ingredient_list):
+    url = 'https://api.edamam.com/search?q='+ingredient_list+'&app_id=48df8510bddb6aeeb43853f947ec1f02&app_key=6e9fd246'
     response = requests.request("GET", url)
     recipe = response.json()['hits'][0]['recipe']
     return recipe
