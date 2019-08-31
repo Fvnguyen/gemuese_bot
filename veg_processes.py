@@ -1,5 +1,6 @@
 import re
 import requests
+import os
 
 #Calculates the normalized Levenshtein distance of 2 strings
 def levenshtein(s1, s2):
@@ -42,19 +43,25 @@ def matching(text,master_list):
 #     return summary
   
 def veggyrecipe(ingredient_list):
-    url = 'https://api.edamam.com/search?q='+ingredient_list+'&app_id=48df8510bddb6aeeb43853f947ec1f02&app_key=6e9fd246&health=vegetarian'
+    appid = '&app_id='+os.environ['EDAMAM_app']
+    appapi = '&app_key='+os.environ['EDAMAM_api']
+    url = 'https://api.edamam.com/search?q='+ingredient_list+appid+appapi+'&health=vegetarian'
     response = requests.request("GET", url)
     recipe = response.json()['hits'][0]['recipe']
     return recipe
 
 def veganrecipe(ingredient_list):
-    url = 'https://api.edamam.com/search?q='+ingredient_list+'&app_id=48df8510bddb6aeeb43853f947ec1f02&app_key=6e9fd246&health=vegan'
+    appid = '&app_id='+os.environ['EDAMAM_app']
+    appapi = '&app_key='+os.environ['EDAMAM_api']
+    url = 'https://api.edamam.com/search?q='+ingredient_list+appid+appapi+'&health=vegan'
     response = requests.request("GET", url)
     recipe = response.json()['hits'][0]['recipe']
     return recipe
 
 def getrecipe(ingredient_list):
-    url = 'https://api.edamam.com/search?q='+ingredient_list+'&app_id=48df8510bddb6aeeb43853f947ec1f02&app_key=6e9fd246'
+    appid = '&app_id='+os.environ['EDAMAM_app']
+    appapi = '&app_key='+os.environ['EDAMAM_api']
+    url = 'https://api.edamam.com/search?q='+ingredient_list+appid+appapi
     response = requests.request("GET", url)
     recipe = response.json()['hits'][0]['recipe']
     return recipe

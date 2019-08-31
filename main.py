@@ -1,4 +1,4 @@
-# Let's make a dice bot
+# Let's make a bot that suggests seasonal vegetables
 import random
 import time
 from telegram.ext import Updater,CommandHandler,MessageHandler, Filters, RegexHandler, ConversationHandler,  CallbackQueryHandler
@@ -43,7 +43,7 @@ def look_up(veggie):
     return approval
 
 # Toke functions
-TELEGRAM_TOKEN = "957270511:AAH56Vpe-t8-w-R4essJZ5s7h0uLvrV3PEE"
+TELEGRAM_TOKEN = os.environ['gemuese_bot']
 
 PORT = int(os.environ.get('PORT', '8443'))
 updater = Updater(TELEGRAM_TOKEN, use_context=True)
