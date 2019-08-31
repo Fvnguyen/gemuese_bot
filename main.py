@@ -54,7 +54,8 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 # start
 
 def start(update, context):
-    context.bot.send_message(chat_id=update.message.chat_id, text="Hallo Ich bin Gemüse Bot und ich empfehle dir saisonales Gemüse.")
+    context.bot.send_message(chat_id=update.message.chat_id, text="Hallo Ich bin der Gemüse Souffleur und ich empfehle dir gerne saisonales Gemüse.")
+    context.bot.send_message(chat_id=update.message.chat_id, text="Probier mich einfach mal aus, z.B. mit /empfehlung oder /rezept.")
 
 start_handler = CommandHandler('start', start)
 dispatcher.add_handler(start_handler)
