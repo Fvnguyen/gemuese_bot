@@ -25,7 +25,6 @@ def stat_counter(id,function):
     data.append(entry)
     new_data = pickle.dumps(data)
     r.set(filename,new_data)
-    print(data)
 
 def stats(func):
     @wraps(func)

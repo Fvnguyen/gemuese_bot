@@ -20,6 +20,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 
 # start
 
+@vp.stats
 def start(update, context):
     context.bot.send_message(chat_id=update.message.chat_id, text="Hallo Ich bin der Gemüse Souffleur und ich empfehle dir gerne saisonales Gemüse.")
     context.bot.send_message(chat_id=update.message.chat_id, text="Probier mich einfach mal aus, z.B. mit /empfehlung oder /rezept.")
@@ -29,14 +30,16 @@ dispatcher.add_handler(start_handler)
 
 #Veggy function
 LOOKUP = range(1)
+
 @vp.stats
 def suggested_veggie(update, context):
-    suggestion = vp.suggestion()[0]+' '+str(vp.suggestion()[1])
+    suggestion = vp.suggestion()[0]+' '+''.join(vp.suggestion()[1])
     context.bot.send_message(chat_id=update.message.chat_id, text=suggestion)
 
 veggie_handler = CommandHandler('empfehlung', suggested_veggie)
 dispatcher.add_handler(veggie_handler)
 
+@vp.stats
 def veggie_list(update, context):
     seasonal_list = ', '.join(vp.seasonal()[1])
     context.bot.send_message(chat_id=update.message.chat_id, text="Diese Gemüsesorten sind diesen Monat in Saison:")
@@ -45,6 +48,7 @@ def veggie_list(update, context):
 veggieList_handler = CommandHandler('liste', veggie_list)
 dispatcher.add_handler(veggieList_handler)
 
+@vp.stats
 def start_lookup(update,context):
     update.message.reply_text('Welches Gemüse möchtest Du prüfen? (Antworte "cancel" zum abbrechen)')
 
@@ -67,6 +71,7 @@ conv_handler = ConversationHandler(
     )
 dispatcher.add_handler(conv_handler)
 
+@vp.stats
 def recipe(update, context):
     keyboard = [[InlineKeyboardButton("Keine Einschränkung", callback_data='NONE'),
                  InlineKeyboardButton("Vegetarisch", callback_data='vegetarian')],
@@ -104,6 +109,7 @@ updater.dispatcher.add_handler(CallbackQueryHandler(diet))
 
 
 #Unknown command handler
+@vp.stats
 def unknown(update, context):
     context.bot.send_message(chat_id=update.message.chat_id, text="Tut mir Leid diesen Befehl kenne ich nicht.")
 
