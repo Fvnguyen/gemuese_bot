@@ -30,7 +30,7 @@ dispatcher.add_handler(start_handler)
 #Veggy function
 LOOKUP = range(1)
 def suggested_veggie(update, context):
-    suggesion = vp.suggestion()[0]+' '+str(vp.suggestion()[1])
+    suggestion = vp.suggestion()[0]+' '+str(vp.suggestion()[1])
     context.bot.send_message(chat_id=update.message.chat_id, text=suggestion)
 
 veggie_handler = CommandHandler('empfehlung', suggested_veggie)
@@ -83,20 +83,17 @@ def diet(update, context):
     answer = str(update.callback_query.data)
     print(answer)
     if answer == 'NONE':
-        seasonal_list = ','.join(random.sample(eng_seasonal(),2))
-        recipe = vp.getrecipe(seasonal_list)
+        recipe = vp.getrecipe()
         title = recipe[0]
         summary = recipe[1]
         query.edit_message_text(text=summary,parse_mode=ParseMode.MARKDOWN)
     elif answer == 'vegetarian':
-        seasonal_list = ','.join(random.sample(eng_seasonal(),2))
-        recipe = vp.veggyrecipe(seasonal_list)
+        recipe = vp.veggyrecipe()
         title = recipe[0]
         summary = recipe[1]
         query.edit_message_text(text=summary,parse_mode=ParseMode.MARKDOWN)
     else:
-        seasonal_list = ','.join(random.sample(eng_seasonal(),2))
-        recipe = vp.veganrecipe(seasonal_list)
+        recipe = vp.veganrecipe()
         title = recipe[0]
         summary = recipe[1]
         query.edit_message_text(text=summary,parse_mode=ParseMode.MARKDOWN)
@@ -107,7 +104,7 @@ updater.dispatcher.add_handler(CallbackQueryHandler(diet))
 
 #Unknown command handler
 def unknown(update, context):
-    context.bot.send_message(chat_id=update.message.chat_id, text="Sorry, I am only here to role some tasty dice.")
+    context.bot.send_message(chat_id=update.message.chat_id, text="Tut mir Leid diesen Befehl kenne ich nicht.")
 
 unknown_handler = MessageHandler(Filters.command, unknown)
 dispatcher.add_handler(unknown_handler)
