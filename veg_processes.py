@@ -23,6 +23,7 @@ def stat_counter(id,function):
     data.update(entry)
     new_data = pickle.dumps(data)
     r.set(filename,new_data)
+    print(data)
 
 def stats(func):
     @wraps(func)
@@ -129,6 +130,7 @@ def in_list():
     master = ledger["gemuese"].tolist()
     return master
 
+@stats
 def suggestion():
     suggestion = random.sample(seasonal()[1],1)
     return 'Warum kochst Du heute nicht etwas mit:',suggestion
