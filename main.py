@@ -29,6 +29,7 @@ dispatcher.add_handler(start_handler)
 
 #Veggy function
 LOOKUP = range(1)
+@vp.stats
 def suggested_veggie(update, context):
     suggestion = vp.suggestion()[0]+' '+str(vp.suggestion()[1])
     context.bot.send_message(chat_id=update.message.chat_id, text=suggestion)

@@ -10,6 +10,8 @@ from functools import wraps
 import pickle
 import redis
 
+r = redis.from_url(os.environ.get("REDIS_URL"))
+
 # Function monitoring wrapper
 def stat_counter(id,function):
     try:
@@ -20,7 +22,7 @@ def stat_counter(id,function):
         print("did not load stats")
         data = []
     entry = [{'id':id,'function':function,'time': datetime.now()}]
-    data.update(entry)
+    data.append(entry)
     new_data = pickle.dumps(data)
     r.set(filename,new_data)
     print(data)
@@ -130,7 +132,6 @@ def in_list():
     master = ledger["gemuese"].tolist()
     return master
 
-@stats
 def suggestion():
     suggestion = random.sample(seasonal()[1],1)
     return 'Warum kochst Du heute nicht etwas mit:',suggestion
