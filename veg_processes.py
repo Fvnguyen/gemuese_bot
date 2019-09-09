@@ -71,6 +71,7 @@ def veggyrecipe():
         appid = '&app_id='+os.environ['EDAMAM_app']
         appapi = '&app_key='+os.environ['EDAMAM_api']
         url = 'https://api.edamam.com/search?q='+ingredient_list+'&'+uniseasonal+appid+appapi+'&health=vegetarian'
+        response = requests.request("GET", url)
         recipe = response.json()['hits'][0]['recipe']
         precipe = pickle.dumps(recipe)
         r.set('vgrecipe',precipe,ex = 20)
@@ -89,6 +90,7 @@ def veganrecipe():
         appid = '&app_id='+os.environ['EDAMAM_app']
         appapi = '&app_key='+os.environ['EDAMAM_api']
         url = 'https://api.edamam.com/search?q='+ingredient_list+'&'+uniseasonal+appid+appapi+'&health=vegan'
+        response = requests.request("GET", url)
         recipe = response.json()['hits'][0]['recipe']
         precipe = pickle.dumps(recipe)
         r.set('vnrecipe',precipe,ex = 20)
@@ -107,6 +109,7 @@ def getrecipe():
         appid = '&app_id='+os.environ['EDAMAM_app']
         appapi = '&app_key='+os.environ['EDAMAM_api']
         url = 'https://api.edamam.com/search?q='+ingredient_list+'&'+uniseasonal+appid+appapi+'&health=vegetarian'
+        response = requests.request("GET", url)
         recipe = response.json()['hits'][0]['recipe']
         precipe = pickle.dumps(recipe)
         r.set('recipe',precipe,ex = 20)
