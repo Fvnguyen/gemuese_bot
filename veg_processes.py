@@ -60,43 +60,56 @@ def matching(text,master_list):
 
 # recipe functions
 def veggyrecipe():
-    ingredient_list = ','.join(random.sample(eng_seasonal(),2))
-    uniseasonal = []
-    for x in eng_unseasonal():
-        uniseasonal.append('excluded='+x)
-    uniseasonal = '&'.join(uniseasonal)
-    appid = '&app_id='+os.environ['EDAMAM_app']
-    appapi = '&app_key='+os.environ['EDAMAM_api']
-    url = 'https://api.edamam.com/search?q='+ingredient_list+'&'+uniseasonal+appid+appapi+'&health=vegetarian'
-    recipe = response.json()['hits'][0]['recipe']
+    if r.exists("vgrecipe"):
+        recipe = pickle.loads(r.get('vgrecipe'))
+    else:
+        ingredient_list = ','.join(random.sample(eng_seasonal(),2))
+        uniseasonal = []
+        for x in eng_unseasonal():
+            uniseasonal.append('excluded='+x)
+        uniseasonal = '&'.join(uniseasonal)
+        appid = '&app_id='+os.environ['EDAMAM_app']
+        appapi = '&app_key='+os.environ['EDAMAM_api']
+        url = 'https://api.edamam.com/search?q='+ingredient_list+'&'+uniseasonal+appid+appapi+'&health=vegetarian'
+        recipe = response.json()['hits'][0]['recipe']
+        precipe = pickle.dumps(recipe)
+        r.set('vgrecipe',precipe,ex = 20)
     summary = '['+recipe['label']+']'+'('+recipe['url']+')'
     return 'Versuche es mal mit diesem leckeren Rezept',summary
 
 def veganrecipe():
-    ingredient_list = ','.join(random.sample(eng_seasonal(),2))
-    uniseasonal = []
-    for x in eng_unseasonal():
-        uniseasonal.append('excluded='+x)
-    uniseasonal = '&'.join(uniseasonal)
-    appid = '&app_id='+os.environ['EDAMAM_app']
-    appapi = '&app_key='+os.environ['EDAMAM_api']
-    url = 'https://api.edamam.com/search?q='+ingredient_list+'&'+uniseasonal+appid+appapi+'&health=vegan'
-    response = requests.request("GET", url)
-    recipe = response.json()['hits'][0]['recipe']
+    if r.exists("vnrecipe"):
+        recipe = pickle.loads(r.get('vnrecipe'))
+    else:
+        ingredient_list = ','.join(random.sample(eng_seasonal(),2))
+        uniseasonal = []
+        for x in eng_unseasonal():
+            uniseasonal.append('excluded='+x)
+        uniseasonal = '&'.join(uniseasonal)
+        appid = '&app_id='+os.environ['EDAMAM_app']
+        appapi = '&app_key='+os.environ['EDAMAM_api']
+        url = 'https://api.edamam.com/search?q='+ingredient_list+'&'+uniseasonal+appid+appapi+'&health=vegan'
+        recipe = response.json()['hits'][0]['recipe']
+        precipe = pickle.dumps(recipe)
+        r.set('vnrecipe',precipe,ex = 20)
     summary = '['+recipe['label']+']'+'('+recipe['url']+')'
     return 'Versuche es mal mit diesem leckeren Rezept',summary
 
 def getrecipe():
-    ingredient_list = ','.join(random.sample(eng_seasonal(),2))
-    uniseasonal = []
-    for x in eng_unseasonal():
-        uniseasonal.append('excluded='+x)
-    uniseasonal = '&'.join(uniseasonal)
-    appid = '&app_id='+os.environ['EDAMAM_app']
-    appapi = '&app_key='+os.environ['EDAMAM_api']
-    url = 'https://api.edamam.com/search?q='+ingredient_list+'&'+uniseasonal+appid+appapi
-    response = requests.request("GET", url)
-    recipe = response.json()['hits'][0]['recipe']
+    if r.exists("recipe"):
+        recipe = pickle.loads(r.get('recipe'))
+    else:
+        ingredient_list = ','.join(random.sample(eng_seasonal(),2))
+        uniseasonal = []
+        for x in eng_unseasonal():
+            uniseasonal.append('excluded='+x)
+        uniseasonal = '&'.join(uniseasonal)
+        appid = '&app_id='+os.environ['EDAMAM_app']
+        appapi = '&app_key='+os.environ['EDAMAM_api']
+        url = 'https://api.edamam.com/search?q='+ingredient_list+'&'+uniseasonal+appid+appapi+'&health=vegetarian'
+        recipe = response.json()['hits'][0]['recipe']
+        precipe = pickle.dumps(recipe)
+        r.set('recipe',precipe,ex = 20)
     summary = '['+recipe['label']+']'+'('+recipe['url']+')'
     return 'Versuche es mal mit diesem leckeren Rezept',summary
 
@@ -137,12 +150,13 @@ def suggestion():
 
 def look_up(veggie):
     season_list = [x.lower() for x in seasonal()[1]]
+    master = [x.lower() for x in in_list()]
     approval = matching(veggie.lower(),season_list)
-    in_master = veggie.lower() in [x.lower() for x in in_list()]
+    in_master = matching(veggie.lower(),master)
     if approval > 0.7:
         approval = "Mmmmh, Saisonal...( ͡° ͜ʖ ͡°)"
     else:
-        if in_master:
+        if in_master > 0.7:
             approval = "Igitt, importiert ಠ_ಠ"
         else:
             approval = "Ich kann das Gemüse in meiner Liste nicht finden. Ist es richtig geschrieben und auch ein heimisches Gemüse? Obst, Exotische Gemüse oder Getreide (wie Kartoffeln) sind in meiner Liste nicht enthalten."

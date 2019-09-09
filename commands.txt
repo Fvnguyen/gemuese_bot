@@ -1,4 +1,4 @@
-empfehlung - Empfiehlt ein saisonales Gemüse
-liste - Zeigt alle saisonalen Gemüse diesen Monat
-suche - Prüft ob das genannte Gemüse saisonal ist
-rezept - Empfiehlt ein Rezept mit saisonalem Gemüse (auch Vegetarisch oder Vegan)
+empfehlung - Empfiehlt ein saisonales Gemï¿½se
+liste - Zeigt alle saisonalen Gemï¿½se diesen Monat
+suche - Prï¿½ft ob das genannte Gemï¿½se saisonal ist
+rezept - Empfiehlt ein Rezept mit saisonalem Gemï¿½se (auch Vegetarisch oder Vegan), aktualisiert sich alle 20s
