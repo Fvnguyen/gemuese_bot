@@ -75,7 +75,8 @@ def veggyrecipe():
         recipe = response.json()['hits'][0]['recipe']
         precipe = pickle.dumps(recipe)
         r.set('vgrecipe',precipe,ex = 20)
-    summary = '['+recipe['label']+']'+'('+recipe['url']+')'
+        link = re.sub('^drupal.{1}','',recipe['url'])
+    summary = '['+recipe['label']+']'+'('+link+')'
     return 'Versuche es mal mit diesem leckeren Rezept',summary
 
 def veganrecipe():
@@ -94,7 +95,8 @@ def veganrecipe():
         recipe = response.json()['hits'][0]['recipe']
         precipe = pickle.dumps(recipe)
         r.set('vnrecipe',precipe,ex = 20)
-    summary = '['+recipe['label']+']'+'('+recipe['url']+')'
+        link = re.sub('^drupal.{1}','',recipe['url'])
+    summary = '['+recipe['label']+']'+'('+link+')'
     return 'Versuche es mal mit diesem leckeren Rezept',summary
 
 def getrecipe():
@@ -113,7 +115,8 @@ def getrecipe():
         recipe = response.json()['hits'][0]['recipe']
         precipe = pickle.dumps(recipe)
         r.set('recipe',precipe,ex = 20)
-    summary = '['+recipe['label']+']'+'('+recipe['url']+')'
+        link = re.sub('^drupal.{1}','',recipe['url'])
+    summary = '['+recipe['label']+']'+'('+link+')'
     return 'Versuche es mal mit diesem leckeren Rezept',summary
 
 # Gemuesefunktionen
